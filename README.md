@@ -15,10 +15,16 @@ Artesia는 매번 다르게 생성되는 던전을 탐험하며 미지의 비밀
 ## 스크린샷
 
 ### 맵 생성 (BSP)
+
 ![맵 생성](Artesia_Image/mapgen.gif)
 
-### A* 경로탐색
+### A\* 경로탐색
+
 ![A* 경로탐색](Artesia_Image/astar.png)
+
+- **자주색** — 적 오브젝트
+- **하늘색** — 플레이어블 오브젝트
+- **선과 점** — 적의 진행 경로
 
 ---
 
@@ -27,19 +33,19 @@ Artesia는 매번 다르게 생성되는 던전을 탐험하며 미지의 비밀
 - **절차적 던전 생성** — BSP 알고리즘으로 매 플레이마다 새로운 맵 구조 생성
 - **턴제 전투 시스템** — 이동, 공격, 스킬, 아이템 사용을 조합한 전략적 전투
 - **속성 시스템** — 캐릭터·적·아이템의 속성 조합에 따른 데미지 계산
-- **AI 적 행동** — A* Pathfinding 기반의 적 추적 및 행동 패턴
+- **AI 적 행동** — A\* Pathfinding 기반의 적 추적 및 행동 패턴
 - **8방향 이동** — 그리드 맵 위에서 자유로운 이동 및 스킬을 통한 이동 범위 확장
 
 ---
 
 ## 기술 스택
 
-| 분야 | 기술 |
-|------|------|
-| 엔진 | Unity 2D |
-| 언어 | C# |
-| 맵 생성 | BSP (Binary Space Partitioning) Algorithm |
-| 경로 탐색 | A* Pathfinding |
+| 분야      | 기술                                      |
+| --------- | ----------------------------------------- |
+| 엔진      | Unity 2D                                  |
+| 언어      | C#                                        |
+| 맵 생성   | BSP (Binary Space Partitioning) Algorithm |
+| 경로 탐색 | A\* Pathfinding                           |
 
 ---
 
@@ -127,13 +133,13 @@ Assets/
 
 ## 팀 구성
 
-| 이름 | 역할 |
-|------|------|
-| 권상헌 | Game Director |
+| 이름   | 역할            |
+| ------ | --------------- |
+| 권상헌 | Game Director   |
 | 송수민 | Game Programmer |
-| 고가영 | Game Designer |
-| 김상진 | Game Designer |
-| 이서연 | Game Designer |
+| 고가영 | Game Designer   |
+| 김상진 | Game Designer   |
+| 이서연 | Game Designer   |
 
 ---
 
