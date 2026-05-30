@@ -1,50 +1,148 @@
-# 🌓 Artesia
+# Artesia
 
-## 🎀 게임 개요
-- 장르: 로그라이크 던전 RPG
-- 개발: Unity2D
-- 테마: 우주, 미스터리, 모험, 미소녀, 서브컬처
-- 운영체제: PC
+> 우주를 배경으로 한 로그라이크 턴제 던전 RPG
+> Unity 2D 팀 프로젝트 (2024)
 
-## 🥇기획 의도
-- 독특하고 몰입감 있는 미소녀 2D RPG 경험 제공
-- 현 온라인 모바일 게임 트렌드를 뛰어넘어 , 인디 게임 특유의 매력적인 탐험 요소와 풍부한
-스토리텔링의 조화
-- 미지의 세계를 탐험하며 숨겨진 비밀과 던전을 발견하는 과정에서 오는 즐거움을 다룸
-- 던전의 레이아웃과 아이템의 위치가 매번 달라짐으로서 , 매번 새롭고 독특한 게임플레이 경험
-- 각 캐릭터의 스토리와 감정적 연결을 통해 플레이어가 게임에 깊이 몰입할 수 있도록 설계
-- 추천 대상 : 이상한 던전 시리즈 팬 , 서브컬처 게임 마니아 , 퍼즐 및 탐험 게임 마니아
+---
 
-## 🌏 게임 모티브
-### Subculture
-- 원신, 붕괴: 스타레일, 블루 아카이브
-### 이상한 던전 시리즈(不思議のダンジョン)
-- 포켓몬스터 불가사의 던전 빨강 구조대·파랑 구조대
+## 소개
 
-## 사용 기술
-- Unity2D
-- C#
-   - BSP Algorithm
-   - A* Pathfinding
+Artesia는 매번 다르게 생성되는 던전을 탐험하며 미지의 비밀을 파헤치는 2D 로그라이크 RPG입니다.
+이상한 던전 시리즈의 턴제 던전 탐험 방식에 서브컬처 감성을 녹여 독창적인 플레이 경험을 제공합니다.
 
-## 🎮 게임 플레이
-- 턴 기반 시스템
-- 속성 시스템
-- 플레이어와 AI 제어 적 포켓몬이 교대로 행동
-- 맵은 그리드로 구성
-- 플레이어는 이동 , 공격 , 스킬 사용 , 아이템 사용 중에서 선택하여 한 턴에 행동
-- 이동은 주변의 8 방향으로 가능 , 스킬이나 아이템을 사용하여 이동 거리를 증가 가능
-- 수치값은 플레이어 캐릭터, 각 오브젝트의 스탯과 계수를 기반
+---
 
-## 🤵 참여 인원
- - Game Director
-    - 권상헌
-  
- - Game Programmer
-    - 송수민
-  
- - Game Designer
-    - 고가영
-    - 김상진
-    - 이서연
+## 스크린샷
 
+<!-- 스크린샷 또는 GIF 삽입 -->
+| 던전 탐험 | 전투 화면 |
+|:---------:|:---------:|
+| | |
+
+---
+
+## 핵심 기능
+
+- **절차적 던전 생성** — BSP 알고리즘으로 매 플레이마다 새로운 맵 구조 생성
+- **턴제 전투 시스템** — 이동, 공격, 스킬, 아이템 사용을 조합한 전략적 전투
+- **속성 시스템** — 캐릭터·적·아이템의 속성 조합에 따른 데미지 계산
+- **AI 적 행동** — A* Pathfinding 기반의 적 추적 및 행동 패턴
+- **8방향 이동** — 그리드 맵 위에서 자유로운 이동 및 스킬을 통한 이동 범위 확장
+
+---
+
+## 기술 스택
+
+| 분야 | 기술 |
+|------|------|
+| 엔진 | Unity 2D |
+| 언어 | C# |
+| 맵 생성 | BSP (Binary Space Partitioning) Algorithm |
+| 경로 탐색 | A* Pathfinding |
+
+---
+
+## 프로젝트 구조
+
+```
+Assets/
+├── 00.Scenes/                  # 씬 파일
+│   ├── MainScene.unity
+│   ├── DungeonSample.unity
+│   └── BaseCamp.unity
+│
+├── 01.Scripts/
+│   ├── Core/                   # 인터페이스 및 상태 머신
+│   │   ├── IAbility.cs
+│   │   ├── IDamageable.cs
+│   │   ├── IState.cs
+│   │   ├── ITurn.cs
+│   │   └── StateMachine.cs
+│   ├── Player/                 # 플레이어 상태 및 행동
+│   │   ├── PlayerController.cs
+│   │   ├── PlayerMove.cs
+│   │   ├── PlayerIdle.cs
+│   │   ├── PlayerAtk.cs
+│   │   ├── PlayerStat.cs
+│   │   ├── PlayerSkill.cs
+│   │   └── PlayerCollider.cs
+│   ├── Monster/                # 몬스터 AI 및 행동
+│   │   ├── MobController.cs
+│   │   ├── MobMove.cs
+│   │   ├── MobIdle.cs
+│   │   ├── MobAtk.cs
+│   │   ├── MobStat.cs
+│   │   └── EnemySpawner.cs
+│   ├── Dungeon/                # 맵 생성 및 경로 탐색
+│   │   ├── MapGenerator.cs
+│   │   ├── DrawTile.cs
+│   │   ├── AStarPathfinder.cs
+│   │   └── Node.cs
+│   ├── Item/                   # 아이템 및 스포너
+│   │   ├── PotionStat.cs
+│   │   └── ItemSpawner.cs
+│   ├── Interaction/            # 맵 오브젝트 상호작용
+│   │   ├── PortalCollider.cs
+│   │   └── StairCollider.cs
+│   ├── UI/                     # HUD 및 UI 컴포넌트
+│   │   ├── StatusUI.cs
+│   │   ├── DmgText.cs
+│   │   ├── MinimapOnPlayer.cs
+│   │   ├── CanvasStateListener.cs
+│   │   ├── KeySettingSwitch.cs
+│   │   ├── CameraController.cs
+│   │   └── Btn/                # 씬 전환·메뉴 버튼
+│   │       ├── BackBtn.cs
+│   │       ├── BaseCampBtn.cs
+│   │       ├── MainMenuButton.cs
+│   │       ├── NextStageButton.cs
+│   │       ├── OptionBtn.cs
+│   │       ├── SaveDataBtn.cs
+│   │       └── SelectDunBtn.cs
+│   ├── Data/                   # 데이터 모델
+│   │   ├── Data.cs
+│   │   └── CharacterInformation.cs
+│   ├── Manager/                # 싱글톤 매니저
+│   │   ├── GameManager.cs
+│   │   ├── BattleManager.cs
+│   │   ├── TurnManager.cs
+│   │   ├── UIManager.cs
+│   │   ├── DataManager.cs
+│   │   └── SceneLoader.cs
+│   └── Shader/
+│       └── SpriteOutline.cs
+│
+├── 03.Tilemaps/                # 타일맵 및 룰 타일
+├── Animation/                  # 애니메이터 컨트롤러 및 애니메이션 클립
+├── Resources/                  # 런타임 로드 리소스
+│   ├── Prefabs/
+│   ├── Player/
+│   ├── Monster/
+│   └── Image/
+└── InputSystem/                # Unity Input System 액션
+```
+
+---
+
+## 팀 구성
+
+| 이름 | 역할 |
+|------|------|
+| 권상헌 | Game Director |
+| 송수민 | Game Programmer |
+| 고가영 | Game Designer |
+| 김상진 | Game Designer |
+| 이서연 | Game Designer |
+
+---
+
+## 개발 기간
+
+2024년 3월 — 2024년 6월
+
+---
+
+## 레퍼런스
+
+- 이상한 던전 시리즈 (不思議のダンジョン) — 포켓몬스터 불가사의 던전
+- 원신, 붕괴: 스타레일, 블루 아카이브 — 서브컬처 비주얼 방향성
