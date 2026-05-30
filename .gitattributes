@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# GitHub Linguist — 서드파티 셰이더 언어 통계 제외
+Artesia/Assets/TextMesh Pro/ linguist-vendored
+*.shader linguist-vendored
+*.hlsl linguist-vendored
