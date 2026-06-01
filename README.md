@@ -12,7 +12,12 @@ Artesia는 매번 다르게 생성되는 던전을 탐험하며 미지의 비밀
 
 ---
 
-## 스크린샷
+## 시연 영상
+![Artesia_test](https://github.com/kwsahe/Artesia/blob/main/Artesia_test.gif?raw=true)
+
+---
+
+## 기능 스크린샷
 
 ### 맵 생성 (BSP)
 
