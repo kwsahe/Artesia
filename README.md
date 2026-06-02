@@ -43,6 +43,22 @@ Artesia는 매번 다르게 생성되는 던전을 탐험하며 미지의 비밀
 
 ---
 
+## 데이터베이스 설계 (ERD)
+
+![Artesia ERD](Artesia_ERD.png)
+
+> **DB:** PostgreSQL · **테이블:** 14개
+>
+> | 구역 | 테이블 |
+> | ---- | ------ |
+> | Master Data | `elements` `characters` `character_stats` `skills` `character_skill_unlocks` `monster_types` `item_types` `dungeons` |
+> | User Data | `players` `save_slots` `inventory` |
+> | Play Records | `dungeon_sessions` `dungeon_floors` `battle_logs` |
+>
+> 전체 스키마(DDL) 및 설계 문서 → [`DATABASE_DESIGN.md`](DATABASE_DESIGN.md)
+
+---
+
 ## 기술 스택
 
 | 분야      | 기술                                      |
